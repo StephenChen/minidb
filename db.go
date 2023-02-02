@@ -114,8 +114,8 @@ func (db *MiniDB) Put(key []byte, value []byte) (err error) {
 		return
 	}
 
-	db.mu.RLock()
-	defer db.mu.RUnlock()
+	db.mu.Lock()
+	defer db.mu.Unlock()
 
 	offset := db.dbFile.Offset
 	// 封装为 Entry

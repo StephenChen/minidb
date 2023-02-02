@@ -11,7 +11,7 @@ type DBFile struct {
 	Offset int64
 }
 
-// NewDBFile 创就一个新的数据文件
+// NewDBFile 创建一个新的数据文件
 func NewDBFile(path string) (*DBFile, error) {
 	fileName := path + string(os.PathSeparator) + FileName
 	return newInternal(fileName)
